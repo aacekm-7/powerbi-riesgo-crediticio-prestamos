@@ -89,8 +89,8 @@ Ofrecer una visión panorámica de la cartera de préstamos y analizar en detall
 
 ```
 ├── README.md
-├── panel-bancario.pbix        # Archivo de Power BI
-├── informe/
+├── pbi                        # Archivo de Power BI
+├── informe                    
 │   └── informe-cartera.pdf    # Informe ejecutivo
 ├── images/                    # Capturas del panel
 ├── data/                      # Datos del proyecto
