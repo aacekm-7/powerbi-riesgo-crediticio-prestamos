@@ -20,7 +20,7 @@
 - [Recomendaciones](#-recomendaciones)
 - [Limitaciones](#-limitaciones)
 - [Estructura del repositorio](#-estructura-del-repositorio)
-- [Dashboards](#-dashboards)
+- [Dashboards](#-Dashboards)
 
 ---
 
