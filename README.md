@@ -18,9 +18,9 @@
 - [KPIs generales](#-kpis-generales)
 - [Hallazgos principales](#-hallazgos-principales)
 - [Recomendaciones](#-recomendaciones)
-- [Limitaciones](#-limitaciones)
+- [Limitaciones](#limitaciones)
 - [Estructura del repositorio](#-estructura-del-repositorio)
-- [Dashboards](#-Dashboards)
+- [Dashboards](#dashboards)
 
 ---
 
