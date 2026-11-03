@@ -8,17 +8,22 @@
 > **¿Dónde se concentra el incumplimiento en una cartera de préstamos y qué decisiones debería tomar el banco?**
 > Este proyecto responde esa pregunta con un panel interactivo en Power BI y un informe ejecutivo dirigido a la gerencia de Préstamos y Riesgo Crediticio.
 
+**Tipo de análisis:** descriptivo. El proyecto resume y compara lo que ya ocurrió en la cartera; no incluye modelos predictivos.
+
 ---
 
 ## 📌 Contenido
 
 - [Objetivo del proyecto](#-objetivo-del-proyecto)
+- [Sobre los datos](#-sobre-los-datos)
 - [Preguntas que responde este análisis](#-preguntas-que-responde-este-análisis)
 - [Herramientas utilizadas](#-herramientas-utilizadas)
 - [KPIs generales](#-kpis-generales)
 - [Hallazgos principales](#-hallazgos-principales)
+- [Conclusión](#-conclusión)
 - [Recomendaciones](#-recomendaciones)
 - [Limitaciones](#limitaciones)
+- [Próximos pasos](#-próximos-pasos)
 - [Estructura del repositorio](#-estructura-del-repositorio)
 - [Dashboards](#dashboards)
 
@@ -26,16 +31,23 @@
 
 ## 🎯 Objetivo del proyecto
 
-Ofrecer una visión panorámica de la cartera de préstamos y analizar en detalle sus productos, grupos crediticios y el indicador de incumplimiento de cada segmento. El fin es apoyar la toma de decisiones y detectar a tiempo los factores que afectan negativamente al negocio.
+Ofrecer una visión panorámica de la cartera de préstamos y analizar en detalle sus productos, grupos crediticios y el indicador de incumplimiento de cada uno. El fin es apoyar la toma de decisiones y detectar a tiempo los factores que afectan negativamente al negocio.
+
+## 🗂️ Sobre los datos
+
+- Se trabajó con un **conjunto de datos de ejemplo**, creado con fines de práctica. No corresponde a un banco real.
+- Cada préstamo ya incluye una **clasificación de riesgo asignada** (Bajo, Medio o Alto riesgo) y su **estado actual** (por ejemplo, Incumplido).
+- El análisis **compara la clasificación asignada con el incumplimiento real** para evaluar si la clasificación refleja bien el riesgo.
+- Los datos geográficos corresponden a estados de la India.
 
 ## ❓ Preguntas que responde este análisis
 
 - ¿Cuál es el nivel de incumplimiento de la cartera y cómo cambió entre 2024 y 2025?
 - ¿Qué productos concentran la mayor parte de los préstamos y cuáles incumplen más?
-- ¿Qué ocupaciones y rangos de edad presentan mayor riesgo?
-- ¿La clasificación de riesgo actual predice realmente el incumplimiento?
+- ¿Qué ocupaciones y rangos de edad presentan mayor incumplimiento?
+- ¿La clasificación de riesgo asignada coincide con el incumplimiento real?
 - ¿En qué regiones se concentra el saldo pendiente?
-- ¿Qué segmentos conviene revisar, reforzar o priorizar?
+- ¿Qué productos y grupos conviene revisar, reforzar o priorizar?
 
 ## 🛠️ Herramientas utilizadas
 
@@ -62,7 +74,7 @@ Ofrecer una visión panorámica de la cartera de préstamos y analizar en detall
 
 3. **La garantía, por sí sola, no explica el resultado.** El préstamo con garantía de oro tiene 23.08% de incumplimiento, mientras que el de garantía de propiedad (LAP) tiene 4.76% y el hipotecario 0%. Conviene revisar cómo se valoran y gestionan las garantías de oro.
 
-4. **La clasificación de riesgo parece no estar funcionando.** El grupo de Bajo Riesgo domina la cartera (41.18%) y tiene el mayor incumplimiento (15.63%). Además, existen dos clasificaciones con resultados distintos (Grupo Crediticio y Categoría de Riesgo, donde Riesgo Bajo suma 63.4%), lo que refuerza la necesidad de validarlas.
+4. **La clasificación de riesgo no refleja el incumplimiento real.** Si la clasificación funcionara bien, el grupo de Alto Riesgo debería incumplir más y el de Bajo Riesgo, menos. En estos datos ocurre lo contrario: el grupo de **Bajo Riesgo** domina la cartera (41.18%) y presenta el **mayor incumplimiento (15.63%)**. Además, existen dos clasificaciones con resultados distintos (Grupo Crediticio y Categoría de Riesgo, donde Riesgo Bajo suma 63.4%), lo que refuerza la necesidad de validarlas.
 
 5. **El incumplimiento se concentra en ciertas ocupaciones.** Profesores (80%), empleados públicos (aprox. 33%) y médicos (27.27%) encabezan la lista. Con solo 30 clientes, estos porcentajes pueden depender de muy pocos casos, por lo que deben leerse como una alerta y no como una conclusión definitiva.
 
@@ -70,10 +82,16 @@ Ofrecer una visión panorámica de la cartera de préstamos y analizar en detall
 
 7. **La cartera crece, pero la calidad no mejora.** En 2025 se colocó 14.4% más que en 2024 y el saldo pendiente bajó 11.7%, aunque el incumplimiento subió de 12.50% a 12.86%.
 
+## 🧾 Conclusión
+
+La cartera analizada tiene un incumplimiento general de **12.67%**. Los **préstamos personales** son el producto más crítico (26.92%), y la **clasificación de riesgo no coincide con el incumplimiento real**: el grupo de Bajo Riesgo incumple más que los demás (15.63%). Por eso se recomienda revisar los criterios con los que se asigna esa clasificación y dar seguimiento especial a los préstamos personales.
+
+Como los datos son de ejemplo y la muestra es pequeña, estos hallazgos deben tomarse como una alerta y validarse con datos reales.
+
 ## ✅ Recomendaciones
 
 - Reforzar la evaluación crediticia en préstamos personales y líneas de crédito.
-- Revisar y recalibrar el modelo de clasificación de riesgo, y unificar las dos clasificaciones existentes.
+- Revisar y recalibrar los criterios de clasificación de riesgo, y unificar las dos clasificaciones existentes.
 - Evaluar el proceso de valoración de las garantías de oro.
 - Aplicar una revisión más estricta a los perfiles de mayor incumplimiento, confirmando el patrón con una muestra más grande.
 - Priorizar la colocación de préstamos hipotecarios y vigilar la concentración geográfica en Maharashtra.
@@ -82,8 +100,14 @@ Ofrecer una visión panorámica de la cartera de préstamos y analizar en detall
 
 - La muestra es pequeña (30 clientes), por lo que varios porcentajes dependen de pocos casos.
 - El periodo analizado es corto (2024-2025).
-- Los resultados muestran asociaciones, no causas.
-- Los datos geográficos corresponden a estados de la India.
+- Es un análisis descriptivo: muestra asociaciones, no causas, y no incluye un modelo predictivo.
+- Los datos son de ejemplo y los datos geográficos corresponden a estados de la India.
+
+## 🚀 Próximos pasos
+
+- Validar los hallazgos con una muestra más grande o con datos reales.
+- Analizar qué variables de la clasificación de riesgo podrían estar explicando la diferencia.
+- Probar un modelo predictivo de incumplimiento y compararlo con la clasificación actual.
 
 ## 📁 Estructura del repositorio
 
@@ -96,17 +120,15 @@ Ofrecer una visión panorámica de la cartera de préstamos y analizar en detall
 ├── data/                      # Datos del proyecto
 └── sql/                       # Consultas utilizadas
 ```
-
 ## Dashboards
 
 ### Resumen
 
-<img width="1339" height="755" alt="image" src="https://github.com/user-attachments/assets/d36496ea-f754-4168-ba2d-b12e29d90ccd" />
+<img width="1418" height="791" alt="image" src="https://github.com/user-attachments/assets/300f7cd5-af11-4e0e-a9cd-245bd8b0fc55" />
 
 ### Análisis de Riesgos
 
-<img width="1336" height="751" alt="image" src="https://github.com/user-attachments/assets/17e39b37-6ec2-40f0-9ede-7561b2657367" />
-
+<img width="1416" height="775" alt="image" src="https://github.com/user-attachments/assets/cbb076bf-cec3-4d68-8d65-ea0b7999b453" />
 
 ## Autor
 
